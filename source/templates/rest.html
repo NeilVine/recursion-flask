@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+  <h1>REST API</h1>
+  <p>This REST API will search for a file or folder in the directory structure</p>
+
+  <h2>Instructions</h2>
+  <p>Append url with <strong>?search=</strong>name to search for</p>
+
+  <h3>Example</h3>
+  <p>/rest?search=folder1</p>
+  <p>will return a JSON string containing the result</p>
+
+{% endblock %}

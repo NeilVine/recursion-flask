@@ -1,0 +1,42 @@
+
+{% extends "base.html" %}
+
+{% block content %}
+
+<h1>Recursive File Structure</h1>
+<p>This web application is presented as a solution to NetPay's Test 1: Recursive File Structure</p>
+<h2>Pages</h2>
+<ul>
+  <li> <strong> Search Database </strong> page provides a user interface to query the contents of the database.</li>
+  <li> <strong> REST API </strong> page queries the database and provides a JSON response containing search results. </li>
+</ul>
+
+<h2>Technologies</h2>
+<ul>
+  <li>Python, Flask, Jinja, FlaskForm</li>
+  <li>Sqlite - database</li>
+  <li>Bootstrap - navigation bar and submit button styling</li>
+</ul>
+
+<h2>Notes</h2>
+<p>A directory structure is essentailly a tree, 
+   and this solution builds a tree, 
+   whether from the text file or from the database records. 
+   The tree is built using recursion. And, the construction of the tree is
+   an example of the Composite design pattern.</p>
+
+<p>The database stores only the minimum amount of information necessary. 
+   This improves maintainablility and makes it simple to move the portions
+   of the tree. The downside to this is that processing is required to get 
+   the full path to a node/leaf. Hence, this will be slower than a solution
+   storing the full path in each record</p>
+
+<p>Within the database, each node is stored as a record with the following fields: 
+  <ol>
+    <li>Name - The name of the node.</li>
+    <li>Id - A unique Id to allow for duplicate node names.</li>
+    <li>Parent Id - The Id of the node's parent.</li>
+  </ol>
+</p>
+ 
+{% endblock %}
